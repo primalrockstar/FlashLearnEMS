@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { StudyInterface } from '@/components/study/StudyInterface'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -19,15 +20,40 @@ import {
   BookOpen
 } from 'lucide-react'
 import { StudySessionConfig, StudyMode, SessionStats, getDefaultConfig } from '@/lib/study-session'
-import { sampleFlashcards } from '@/data/sample-cards'
+import { getAllLocalFlashcards } from '@/lib/local-flashcards'
 import { cn } from '@/lib/utils'
 
 type ViewState = 'mode-selection' | 'studying' | 'results'
 
 export default function StudyPage() {
+  const searchParams = useSearchParams()
   const [viewState, setViewState] = useState<ViewState>('mode-selection')
   const [selectedConfig, setSelectedConfig] = useState<StudySessionConfig | null>(null)
   const [sessionStats, setSessionStats] = useState<SessionStats | null>(null)
+  const [showChapterSelect, setShowChapterSelect] = useState(false)
+  const [selectedChapters, setSelectedChapters] = useState<number[]>([])
+  
+  // Load all flashcards
+  const allFlashcards = getAllLocalFlashcards()
+
+  // Get unique chapters
+  const chapters = Array.from(new Set(allFlashcards.map(card => card.chapterNumber)))
+    .filter((id): id is number => typeof id === 'number')
+    .sort((a, b) => a - b)
+
+  useEffect(() => {
+    const chapterId = searchParams.get('chapterId')
+    if (chapterId) {
+      const config: StudySessionConfig = {
+        mode: 'deep-session',
+        chapterId: parseInt(chapterId),
+        cardCount: 100, // Ensure we get all cards for the chapter
+        shuffled: true
+      }
+      setSelectedConfig(config)
+      setViewState('studying')
+    }
+  }, [searchParams])
 
   const studyModes = [
     {
@@ -65,13 +91,52 @@ export default function StudyPage() {
       textColor: 'text-purple-400',
       bgColor: 'bg-purple-400/10 border-purple-400/30',
       features: ['Exam conditions', 'Comprehensive coverage', 'Performance analytics']
+    },
+    {
+      mode: 'random-250' as StudyMode,
+      title: 'Test Mode',
+      description: 'Intensive 250-card session drawn randomly from all chapters',
+      duration: '120+ minutes',
+      cardCount: '250 cards',
+      icon: Brain,
+      color: 'from-red-400 to-orange-500',
+      textColor: 'text-red-400',
+      bgColor: 'bg-red-400/10 border-red-400/30',
+      features: ['Massive review', 'Random selection', 'Endurance training']
     }
   ]
 
   const handleModeSelect = (mode: StudyMode) => {
+    if (mode === 'custom-drill') {
+      setShowChapterSelect(true)
+      return
+    }
+
     const config = getDefaultConfig(mode)
     setSelectedConfig(config)
     setViewState('studying')
+  }
+
+  const startCustomDrill = () => {
+    if (selectedChapters.length === 0) return
+
+    const config: StudySessionConfig = {
+      mode: 'custom-drill',
+      chapterIds: selectedChapters,
+      shuffled: true,
+      includeWeakAreas: false
+    }
+    setSelectedConfig(config)
+    setViewState('studying')
+    setShowChapterSelect(false)
+  }
+
+  const toggleChapter = (chapterId: number) => {
+    setSelectedChapters(prev => 
+      prev.includes(chapterId) 
+        ? prev.filter(id => id !== chapterId)
+        : [...prev, chapterId]
+    )
   }
 
   const handleSessionEnd = (stats: SessionStats | null) => {
@@ -96,7 +161,7 @@ export default function StudyPage() {
   if (viewState === 'studying' && selectedConfig) {
     return (
       <StudyInterface
-        cards={sampleFlashcards}
+        cards={allFlashcards}
         config={selectedConfig}
         onSessionEnd={handleSessionEnd}
         onExit={handleReturn}
@@ -249,6 +314,59 @@ export default function StudyPage() {
 
         {/* Study Mode Cards */}
         <div className="grid gap-8 md:grid-cols-3 mb-12">
+          {/* Custom Drill Card */}
+          <Card className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer">
+            <CardContent className="p-8">
+              <div className="text-center">
+                <div className={cn(
+                  "mx-auto mb-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-400/20 to-teal-500/20"
+                )}>
+                  <Settings className="h-12 w-12 mx-auto text-emerald-400" />
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-3">Custom Drill</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Select specific chapters to focus your study session
+                </p>
+                
+                <div className="flex justify-center gap-4 mb-6">
+                  <Badge variant="secondary" className="bg-white/10 border-white/20">
+                    <Clock className="h-3 w-3 mr-1" />
+                    Flexible
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white/10 border-white/20">
+                    <BookOpen className="h-3 w-3 mr-1" />
+                    Custom
+                  </Badge>
+                </div>
+                
+                <div className="space-y-2 mb-8">
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <div className="w-1 h-1 rounded-full bg-primary"></div>
+                    Target specific chapters
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <div className="w-1 h-1 rounded-full bg-primary"></div>
+                    Focus on weak areas
+                  </div>
+                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                    <div className="w-1 h-1 rounded-full bg-primary"></div>
+                    Unlimited duration
+                  </div>
+                </div>
+                
+                <Button 
+                  onClick={() => handleModeSelect('custom-drill')}
+                  className="w-full group-hover:shadow-lg transition-all duration-300 bg-emerald-400/10 border-emerald-400/30 text-emerald-400"
+                  variant="outline"
+                >
+                  <Play className="h-4 w-4 mr-2" />
+                  Configure Drill
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
           {studyModes.map((mode) => {
             const IconComponent = mode.icon
             return (
@@ -310,23 +428,72 @@ export default function StudyPage() {
           })}
         </div>
 
+        {/* Chapter Selection Modal */}
+        {showChapterSelect && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <Card className="w-full max-w-2xl max-h-[80vh] flex flex-col glass-card border-white/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Select Chapters</CardTitle>
+                <p className="text-muted-foreground">Choose which chapters you want to include in your drill</p>
+              </CardHeader>
+              <CardContent className="flex-1 overflow-y-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {chapters.map((chapterId) => (
+                    <Button
+                      key={chapterId}
+                      variant="outline"
+                      className={cn(
+                        "justify-start h-auto py-3 px-4",
+                        selectedChapters.includes(chapterId) 
+                          ? "bg-primary/20 border-primary text-primary hover:bg-primary/30" 
+                          : "bg-white/5 border-white/10 hover:bg-white/10"
+                      )}
+                      onClick={() => toggleChapter(chapterId)}
+                    >
+                      <div className="text-left">
+                        <div className="font-semibold">Chapter {chapterId}</div>
+                      </div>
+                    </Button>
+                  ))}
+                </div>
+              </CardContent>
+              <div className="p-6 border-t border-white/10 flex justify-between items-center bg-black/20">
+                <div className="text-sm text-muted-foreground">
+                  {selectedChapters.length} chapters selected
+                </div>
+                <div className="flex gap-3">
+                  <Button variant="ghost" onClick={() => setShowChapterSelect(false)}>
+                    Cancel
+                  </Button>
+                  <Button 
+                    onClick={startCustomDrill}
+                    disabled={selectedChapters.length === 0}
+                  >
+                    Start Drill
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        )}
+
         {/* Quick Stats */}
         <Card className="glass-card">
           <CardContent className="p-6">
             <div className="grid gap-6 md:grid-cols-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-primary mb-1">{sampleFlashcards.length}</div>
+                <div className="text-2xl font-bold text-primary mb-1">{allFlashcards.length}</div>
                 <p className="text-sm text-muted-foreground">Total Cards Available</p>
               </div>
               <div>
                 <div className="text-2xl font-bold text-emerald-400 mb-1">
-                  {new Set(sampleFlashcards.flatMap(card => card.tags)).size}
+                  {new Set(allFlashcards.flatMap(card => card.tags)).size}
                 </div>
                 <p className="text-sm text-muted-foreground">Study Topics</p>
               </div>
               <div>
                 <div className="text-2xl font-bold text-blue-400 mb-1">
-                  {new Set(sampleFlashcards.map(card => card.chapterNumber)).size}
+                  {new Set(allFlashcards.map(card => card.chapterNumber)).size}
                 </div>
                 <p className="text-sm text-muted-foreground">EMT-B Chapters</p>
               </div>

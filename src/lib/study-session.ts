@@ -1,12 +1,14 @@
 import { FlashcardData } from '@/components/flashcard/Flashcard'
 
-export type StudyMode = 'quick-drill' | 'deep-session' | 'exam-mimic'
+export type StudyMode = 'quick-drill' | 'deep-session' | 'exam-mimic' | 'custom-drill' | 'random-250'
 
 export interface StudySessionConfig {
   mode: StudyMode
   duration?: number // minutes
   cardCount?: number
   categories?: string[]
+  chapterId?: number
+  chapterIds?: number[]
   difficulty?: string[]
   includeWeakAreas?: boolean
   shuffled?: boolean
@@ -50,6 +52,18 @@ export class StudySessionManager {
   createSession(config: StudySessionConfig, cards: FlashcardData[]): StudySessionState {
     let sessionCards = [...cards]
 
+    // Filter by chapterId if specified
+    if (config.chapterId) {
+      sessionCards = sessionCards.filter(card => card.chapterNumber === config.chapterId)
+    }
+
+    // Filter by multiple chapterIds if specified
+    if (config.chapterIds?.length) {
+      sessionCards = sessionCards.filter(card => 
+        card.chapterNumber && config.chapterIds?.includes(card.chapterNumber)
+      )
+    }
+
     // Filter by categories if specified
     if (config.categories?.length) {
       sessionCards = sessionCards.filter(card => 
@@ -81,6 +95,9 @@ export class StudySessionManager {
           break
         case 'exam-mimic':
           sessionCards = sessionCards.slice(0, 50)
+          break
+        case 'random-250':
+          sessionCards = sessionCards.slice(0, 250)
           break
       }
     }
@@ -278,6 +295,19 @@ export function getDefaultConfig(mode: StudyMode): StudySessionConfig {
       mode: 'exam-mimic',
       duration: 60,
       cardCount: 50,
+      shuffled: true,
+      includeWeakAreas: false
+    },
+    'custom-drill': {
+      mode: 'custom-drill',
+      duration: 0, // Unlimited
+      shuffled: true,
+      includeWeakAreas: false
+    },
+    'random-250': {
+      mode: 'random-250',
+      duration: 120,
+      cardCount: 250,
       shuffled: true,
       includeWeakAreas: false
     }

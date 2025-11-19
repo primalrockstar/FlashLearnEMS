@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { MedicalDisclaimerBanner } from '@/components/ui/medical-disclaimer-banner'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -115,6 +116,7 @@ const categories = [
 const difficulties = ["All", "Basic", "Intermediate", "Advanced"]
 
 export default function BrowsePage() {
+  const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedDifficulty, setSelectedDifficulty] = useState('All')
@@ -236,7 +238,11 @@ export default function BrowsePage() {
             const IconComponent = chapter.icon
             
             return (
-              <Card key={chapter.id} className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer">
+              <Card 
+                key={chapter.id} 
+                className="glass-card group hover:scale-105 transition-all duration-300 cursor-pointer"
+                onClick={() => router.push(`/study?chapterId=${chapter.id}`)}
+              >
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-4">
                     <div className={cn(
@@ -276,7 +282,14 @@ export default function BrowsePage() {
                       {chapter.category}
                     </Badge>
                     
-                    <Button size="sm" className="bg-primary/10 hover:bg-primary/20 text-primary border-primary/30">
+                    <Button 
+                      size="sm" 
+                      className="bg-primary/10 hover:bg-primary/20 text-primary border-primary/30"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        router.push(`/study?chapterId=${chapter.id}`)
+                      }}
+                    >
                       Study
                       <ChevronRight className="h-3 w-3 ml-1" />
                     </Button>
