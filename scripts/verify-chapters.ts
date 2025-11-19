@@ -4,12 +4,36 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
+// Define the chapter type with flashcards
+type ChapterWithFlashcards = {
+  id: number
+  number: number
+  title: string
+  description: string | null
+  createdAt: Date
+  updatedAt: Date
+  flashcards: Array<{
+    id: string
+    question: string
+    answer: string
+    difficulty: string
+    certificationLevel: string
+    type: string
+    tags: string
+    isActive: boolean
+    createdAt: Date
+    updatedAt: Date
+    chapterNumber: number | null
+    categoryId: number | null
+  }>
+}
+
 async function verifyChapters() {
   try {
     console.log('📚 Detailed Chapter Analysis...\n')
     
     // Get all chapters with card counts
-    const chapters = await prisma.chapter.findMany({
+    const chapters: ChapterWithFlashcards[] = await prisma.chapter.findMany({
       include: {
         flashcards: {
           where: {
@@ -24,16 +48,16 @@ async function verifyChapters() {
     
     console.log(`📊 Found ${chapters.length} chapters:\n`)
     
-    chapters.forEach((chapter, index) => {
+    chapters.forEach((chapter: ChapterWithFlashcards, index: number) => {
       console.log(`${(index + 1).toString().padStart(2, ' ')}. Chapter ${chapter.number.toString().padStart(2, ' ')}: ${chapter.title}`)
       console.log(`    💳 ${chapter.flashcards.length} flashcards`)
       console.log('')
     })
     
     // Verify we have chapters 1-45
-    const missingChapters = []
+    const missingChapters: number[] = []
     for (let i = 1; i <= 45; i++) {
-      const chapterExists = chapters.find(ch => ch.number === i)
+      const chapterExists = chapters.find((ch: ChapterWithFlashcards) => ch.number === i)
       if (!chapterExists) {
         missingChapters.push(i)
       }
@@ -46,20 +70,20 @@ async function verifyChapters() {
     }
     
     // Calculate total cards
-    const totalCards = chapters.reduce((sum, ch) => sum + ch.flashcards.length, 0)
+    const totalCards = chapters.reduce((sum: number, ch: ChapterWithFlashcards) => sum + ch.flashcards.length, 0)
     console.log(`\n📈 Total flashcards across all chapters: ${totalCards}`)
     
     // Find chapters with no cards
-    const emptyChapters = chapters.filter(ch => ch.flashcards.length === 0)
+    const emptyChapters = chapters.filter((ch: ChapterWithFlashcards) => ch.flashcards.length === 0)
     if (emptyChapters.length > 0) {
       console.log(`\n⚠️  Chapters with no flashcards:`)
-      emptyChapters.forEach(ch => {
+      emptyChapters.forEach((ch: ChapterWithFlashcards) => {
         console.log(`   Chapter ${ch.number}: ${ch.title}`)
       })
     }
     
     // Show chapters with most/least cards
-    const sortedByCards = [...chapters].sort((a, b) => b.flashcards.length - a.flashcards.length)
+    const sortedByCards = [...chapters].sort((a: ChapterWithFlashcards, b: ChapterWithFlashcards) => b.flashcards.length - a.flashcards.length)
     console.log(`\n🔝 Most cards: Chapter ${sortedByCards[0].number} - ${sortedByCards[0].title} (${sortedByCards[0].flashcards.length} cards)`)
     console.log(`🔻 Least cards: Chapter ${sortedByCards[sortedByCards.length - 1].number} - ${sortedByCards[sortedByCards.length - 1].title} (${sortedByCards[sortedByCards.length - 1].flashcards.length} cards)`)
     
