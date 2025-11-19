@@ -1,0 +1,180 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+# Next.js specific settings
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirect all requests to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["admin"], Country = ["US"]}
+
+# API routes
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Handle Next.js dynamic routes
+[[redirects]]
+  from = "/study/*"
+  to = "/study/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/browse/*"
+  to = "/browse/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/progress/*"
+  to = "/progress/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/settings/*"
+  to = "/settings/index.html"
+  status = 200
+
+# Legal pages
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/medical-disclaimer"
+  to = "/medical-disclaimer/index.html"
+  status = 200
+
+# PWA and mobile app files
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/json"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+# Content Security Policy for medical app security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none';"
+
+# Database and static assets
+[[headers]]
+  for = "/prisma/*"
+  [headers.values]
+    Cache-Control = "private, no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment variables for production
+[context.production.environment]
+  NODE_ENV = "production"
+  DATABASE_URL = "file:./prisma/prod.db"
+  NEXTAUTH_URL = "https://flashlearems.netlify.app"
+  
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
+  DATABASE_URL = "file:./prisma/dev.db"
+
+# Functions configuration for API routes
+[functions]
+  directory = ".netlify/functions"
+  node_bundler = "esbuild"
+
+# Forms for contact and feedback (if needed later)
+[forms]
+  settings = { recipients = ["support@webconnect360.com"] }
+
+# Build processing
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Prerendering for better SEO and performance
+[[plugins]]
+  package = "netlify-plugin-prerender-spa"
+  
+  [plugins.inputs]
+    # Routes to prerender for better initial load
+    routes = [
+      "/",
+      "/browse",
+      "/study", 
+      "/progress",
+      "/settings",
+      "/privacy",
+      "/terms", 
+      "/medical-disclaimer"
+    ]
+
+# Performance optimizations
+[[edge_handlers]]
+  handler = "cache-control"
+  pattern = "/*"
