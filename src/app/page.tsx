@@ -67,12 +67,12 @@ export default function Home() {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyan-400 mb-1">675+</div>
-                <div className="text-sm text-white/60">Study Cards</div>
+                <div className="text-2xl font-bold text-cyan-400 mb-1">45</div>
+                <div className="text-sm text-white/60">Demo Cards</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-400 mb-1">45</div>
-                <div className="text-sm text-white/60">EMT Chapters</div>
+                <div className="text-2xl font-bold text-blue-400 mb-1">3</div>
+                <div className="text-sm text-white/60">Demo Chapters</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-400 mb-1">3</div>
@@ -80,7 +80,7 @@ export default function Home() {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-emerald-400 mb-1">100%</div>
-                <div className="text-sm text-white/60">Free</div>
+                <div className="text-sm text-white/60">Free Demo</div>
               </div>
             </div>
           </div>

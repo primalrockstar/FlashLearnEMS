@@ -35,7 +35,7 @@ interface Chapter {
 }
 
 // All 45 EMT-B chapters with original titles - legally safe from copyright
-const chapters: Chapter[] = [
+const allChapters: Chapter[] = [
   // Foundation Chapters
   { id: 1, title: "Emergency Medical Services Overview", description: "Introduction to EMS systems, history, roles, and professional responsibilities", cardCount: 15, category: "Foundation", difficulty: "Basic", estimatedTime: "10 min", icon: Truck, color: "from-blue-500 to-cyan-500" },
   { id: 2, title: "Personal Safety and Professional Wellness", description: "Personal protection, wellness strategies, stress management, and scene safety", cardCount: 15, category: "Safety", difficulty: "Basic", estimatedTime: "10 min", icon: Users, color: "from-green-500 to-emerald-500" },
@@ -103,6 +103,9 @@ const chapters: Chapter[] = [
   { id: 44, title: "Multi-Patient Incident Operations", description: "Multiple casualty incidents, resource management, and coordinated response", cardCount: 15, category: "MCI", difficulty: "Advanced", estimatedTime: "18 min", icon: Truck, color: "from-purple-700 to-violet-700" },
   { id: 45, title: "Helicopter Medical Transport", description: "Air medical operations, flight safety, and aeromedical considerations", cardCount: 15, category: "Air Medical", difficulty: "Advanced", estimatedTime: "14 min", icon: Truck, color: "from-cyan-700 to-blue-700" }
 ]
+
+// Demo version: Only first 3 chapters
+const chapters = allChapters.slice(0, 3)
 
 const categories = [
   "All", "Foundation", "Safety", "Legal", "Operations", "Anatomy", "Development", 

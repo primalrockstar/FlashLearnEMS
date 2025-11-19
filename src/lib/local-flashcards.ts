@@ -93,7 +93,8 @@ export const getAllLocalFlashcards = (): FlashcardData[] => {
     })
   }
 
-  return allCards
+  // Demo version: Filter for only first 3 chapters
+  return allCards.filter(card => card.chapterNumber && card.chapterNumber <= 3)
 }
 
 export const getChapterFlashcards = (chapterId: number): FlashcardData[] => {
