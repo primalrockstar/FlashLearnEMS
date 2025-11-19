@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from '@/components/ui/footer';
 import { Navigation } from '@/components/ui/navigation';
@@ -13,6 +13,16 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+  themeColor: "#3b82f6",
+  colorScheme: "dark light",
+};
 
 export const metadata: Metadata = {
   title: "FlashLearn™ EMT - ProMedixEMS™",
@@ -34,9 +44,6 @@ export const metadata: Metadata = {
   applicationName: "FlashLearn™ EMT",
   category: "Education",
   classification: "Medical Education",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover",
-  themeColor: "#3b82f6",
-  colorScheme: "dark light",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -135,6 +142,14 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1
     }
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+    "msapplication-TileColor": "#3b82f6",
+    "msapplication-TileImage": "/mstile-144x144.png",
+    "msapplication-config": "/browserconfig.xml",
+    "HandheldFriendly": "true",
+    "MobileOptimized": "320"
   }
 };
 
@@ -146,16 +161,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* PWA Meta Tags */}
-        <meta name="application-name" content="FlashLearn™ EMT" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="FlashLearn™ EMT" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-TileColor" content="#3b82f6" />
-        <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
-        <meta name="msapplication-config" content="/browserconfig.xml" />
-        
         {/* Security Headers */}
         <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
@@ -167,11 +172,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        
-        {/* Additional Meta for Mobile */}
-        <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="MobileOptimized" content="320" />
         
         {/* Schema.org markup for educational apps */}
         <script
