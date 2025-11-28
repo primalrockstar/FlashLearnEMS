@@ -1,4 +1,4 @@
-# FlashLearn™ EMT — ProMedixEMS™
+# ChapterFlashEMT — ProMedixEMS™
 
 **Next-generation EMT flashcards built for modern EMS students.**
 
@@ -6,15 +6,15 @@ A high-performance, adaptive study engine covering all 45 EMT chapters and over 
 
 ---
 
-## 🚑 About FlashLearn™ EMT
+## 🚑 About ChapterFlashEMT
 
-FlashLearn™ EMT is part of the **ProMedixEMS™** learning ecosystem.
+ChapterFlashEMT is part of the **ProMedixEMS™** learning ecosystem.
 
 It was created by Emergency Medical Technician and software designer **Shaun Williamson** to solve one problem:
 
 > *Most EMT flashcard apps are outdated, shallow, and not aligned to how EMS students actually learn.*
 
-FlashLearn™ EMT delivers clean, structured, level-appropriate content built for today's EMS programs and national educational standards (original or fair-use material based on publicly available information).
+ChapterFlashEMT delivers clean, structured, level-appropriate content built for today's EMS programs and national educational standards (original or fair-use material based on publicly available information).
 
 **Not affiliated with NREMT, AAOS, or any textbook publisher.**  
 **Not a replacement for accredited EMS education—designed to enhance it.**
@@ -67,11 +67,11 @@ Built for **mastery**—not memorization:
 
 ---
 
-## 🔷 Why FlashLearn™ EMT Stands Out
+## 🔷 Why ChapterFlashEMT Stands Out
 
 Most EMT flashcard apps are static, shallow, and generic.
 
-**FlashLearn™ is built with:**
+**ChapterFlashEMT is built with:**
 - High-clarity content
 - EMS-appropriate scenarios
 - Adaptive scheduling
@@ -86,17 +86,17 @@ Most EMT flashcard apps are static, shallow, and generic.
 
 FlashLearn™ EMT is the first tier of a full pathway:
 
-### 🔵 FlashLearn™ AEMT
+### 🔵 ChapterFlashAEMT
 Advanced skills, IV/IO, expanded pharmacology & scenarios.
 
-### 🔥 FlashLearn™ Paramedic
+### 🔥 ChapterFlashParamedic
 ALS content: ECGs, medication math, advanced pathophysiology, critical-care scenarios.
 
-### 📦 FlashLearn™ Bundles
+### 📦 ChapterFlashEMT Bundles
 - **EMT → AEMT**
 - **EMT → Paramedic**
 - **Full EMS Pathway**
-- **"All FlashLearn™ Apps" Access Pass**
+- **"All ChapterFlashEMT Apps" Access Pass**
 
 ---
 
@@ -109,7 +109,7 @@ Perfect for owning the complete EMT deck.
 Ideal for exam prep cycles & analytics.
 
 ### Bundle (Suggested): **$24.99**
-FlashLearn™ EMT + ProMedixEMS™ EMT-B App
+ChapterFlashEMT + ProMedixEMS™ EMT-B App
 
 ---
 
@@ -154,7 +154,7 @@ npm run db:seed
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view FlashLearn™ EMT in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view ChapterFlashEMT in your browser.
 
 ---
 
@@ -194,7 +194,7 @@ The application comes pre-loaded with:
 
 ⚠️ **IMPORTANT MEDICAL DISCLAIMER**
 
-FlashLearn™ EMT is an educational tool designed to supplement formal EMS training. It is **NOT a substitute for**:
+ChapterFlashEMT is an educational tool designed to supplement formal EMS training. It is **NOT a substitute for**:
 - Accredited EMT education programs
 - Clinical training and hands-on experience
 - Official certification courses
