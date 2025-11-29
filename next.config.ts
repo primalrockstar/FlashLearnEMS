@@ -12,7 +12,81 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
   },
   // Add empty turbopack config to silence the warning
-  turbopack: {}
+  turbopack: {},
+  
+  // Security headers to prevent scraping and unauthorized access
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          // Prevent iframe embedding (clickjacking protection)
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          // Prevent MIME type sniffing
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          // Enable XSS protection
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          },
+          // Restrict referrer information
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          // Permissions policy - disable unnecessary features
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
+          },
+          // Content Security Policy - strict
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "img-src 'self' data: https:",
+              "connect-src 'self'",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'"
+            ].join('; ')
+          },
+          // Prevent caching of sensitive data
+          {
+            key: 'Cache-Control',
+            value: 'private, no-cache, no-store, must-revalidate'
+          }
+        ]
+      },
+      {
+        source: '/api/:path*',
+        headers: [
+          // CORS protection for API routes
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: process.env.NEXT_PUBLIC_APP_URL || 'https://chapterflashemt.com'
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET, POST, OPTIONS'
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Content-Type, Authorization'
+          }
+        ]
+      }
+    ]
+  }
 };
 
 // PWA Configuration with runtime caching

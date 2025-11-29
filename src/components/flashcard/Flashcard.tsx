@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Clock, Target, AlertTriangle, Shield } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { rateLimiter } from '@/lib/rate-limiter'
 
 export interface FlashcardData {
   id: string
@@ -61,6 +62,13 @@ export function Flashcard({
 }: FlashcardProps) {
   const [elapsedTime, setElapsedTime] = useState(0)
 
+  // Rate limit flashcard views to prevent scraping
+  useEffect(() => {
+    if (!rateLimiter.canProceed('flashcard_view')) {
+      console.warn('⚠️ Too many flashcards viewed too quickly. Please slow down.')
+    }
+  }, [flashcard.id])
+
   useEffect(() => {
     if (showTimer && startTime) {
       const interval = setInterval(() => {
@@ -83,20 +91,24 @@ export function Flashcard({
   return (
     <div className={cn("perspective-1000", className)}>
       <motion.div
-        className="relative w-full h-96 preserve-3d cursor-pointer"
+        className="relative w-full h-96 preserve-3d cursor-pointer select-none"
         onClick={onFlip}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6, type: "spring" }}
-        style={{ transformStyle: "preserve-3d" }}
+        style={{ 
+          transformStyle: "preserve-3d",
+          userSelect: 'none',
+          WebkitUserSelect: 'none'
+        }}
       >
         {/* Question Side */}
-        <Card className="absolute inset-0 backface-hidden glass-card border-white/10 shadow-2xl">
-          <CardContent className="p-6 h-full flex flex-col">
+        <Card className="absolute inset-0 backface-hidden glass-card border-white/10 shadow-2xl select-none">
+          <CardContent className="p-6 h-full flex flex-col select-none">
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">{typeIcons[flashcard.type as keyof typeof typeIcons] || '📝'}</span>
+                  <span className="text-2xl select-none">{typeIcons[flashcard.type as keyof typeof typeIcons] || '📝'}</span>
                   <Badge className={cn(
                     "text-xs font-medium border",
                     typeStyles[flashcard.type as keyof typeof typeStyles] || 'bg-gray-500/10 border-gray-500/30'

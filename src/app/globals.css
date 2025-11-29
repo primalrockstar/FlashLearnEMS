@@ -201,6 +201,52 @@
     user-select: none;
     -webkit-user-select: none;
   }
+
+  /* Content Protection Classes */
+  .protected-content {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -webkit-touch-callout: none !important;
+    pointer-events: auto;
+  }
+
+  .no-copy {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+
+  /* Prevent drag and drop of images/content */
+  img, .flashcard-content {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+  }
+
+  /* Watermark overlay (subtle) */
+  .content-watermark {
+    position: relative;
+  }
+
+  .content-watermark::before {
+    content: attr(data-device-id);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 8px;
+    opacity: 0.02;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    white-space: nowrap;
+  }
 }
 
 /* Mobile Optimizations */
