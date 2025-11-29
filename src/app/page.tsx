@@ -195,7 +195,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-black/20 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Why FlashLearn?</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Why ChapterFlashEMT?</h2>
             <p className="text-lg text-white/70">
               Advanced features designed specifically for EMT-B certification success
             </p>
@@ -240,7 +240,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Ace Your EMT-B Exam?</h2>
           <p className="text-xl text-white/70 mb-8">
-            Join thousands of EMT students who have improved their knowledge and confidence with FlashLearn
+            Join thousands of EMT students who have improved their knowledge and confidence with ChapterFlashEMT
           </p>
           <Link href="/study">
             <Button size="lg" className="text-xl px-12 py-8 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 shadow-2xl">

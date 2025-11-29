@@ -41,7 +41,7 @@ export default function MedicalDisclaimerPage() {
               </h2>
               <div className="space-y-4 text-red-200 text-lg leading-relaxed">
                 <p className="font-semibold">
-                  FlashLearnEMS is NOT intended for use in actual medical emergencies or patient care.
+                  ChapterFlashEMT is NOT intended for use in actual medical emergencies or patient care.
                 </p>
                 <p>
                   This application provides educational content only and should never replace proper medical training, 
@@ -63,7 +63,7 @@ export default function MedicalDisclaimerPage() {
             </div>
             <div className="space-y-4 text-white/80 leading-relaxed">
               <p>
-                FlashLearnEMS is designed as a supplementary educational tool to help EMT students review and 
+                ChapterFlashEMT is designed as a supplementary educational tool to help EMT students review and 
                 reinforce knowledge obtained through accredited EMT training programs. This application:
               </p>
               <div className="grid md:grid-cols-2 gap-6 mt-6">
@@ -152,7 +152,7 @@ export default function MedicalDisclaimerPage() {
             <h3 className="text-2xl font-bold text-white mb-6">Liability Limitations</h3>
             <div className="bg-slate-800/50 rounded-lg p-6">
               <p className="text-white/80 leading-relaxed">
-                WebConnect360 and the developers of FlashLearnEMS disclaim all liability for any damages, 
+                WebConnect360 and the developers of ChapterFlashEMT disclaim all liability for any damages, 
                 injuries, or adverse outcomes resulting from the use or misuse of this application. Users 
                 assume full responsibility for their actions and decisions. This application is provided 
                 "as is" without warranties of any kind.

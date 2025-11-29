@@ -1,4 +1,4 @@
-# FlashLearn™ EMT — ProMedixEMS™
+# ChapterFlashEMT — ProMedixEMS™
 
 **Next-generation EMT flashcards built for modern EMS students.**
 
@@ -6,15 +6,15 @@ A high-performance, adaptive study engine covering all 45 EMT chapters and over 
 
 ---
 
-## 🚑 About FlashLearn™ EMT
+## 🚑 About ChapterFlashEMT
 
-FlashLearn™ EMT is part of the **ProMedixEMS™** learning ecosystem.
+ChapterFlashEMT is part of the **ProMedixEMS™** learning ecosystem.
 
 It was created by Emergency Medical Technician and software designer **Shaun Williamson** to solve one problem:
 
 > *Most EMT flashcard apps are outdated, shallow, and not aligned to how EMS students actually learn.*
 
-FlashLearn™ EMT delivers clean, structured, level-appropriate content built for today's EMS programs and national educational standards (original or fair-use material based on publicly available information).
+ChapterFlashEMT delivers clean, structured, level-appropriate content built for today's EMS programs and national educational standards (original or fair-use material based on publicly available information).
 
 **Not affiliated with NREMT, AAOS, or any textbook publisher.**  
 **Not a replacement for accredited EMS education—designed to enhance it.**
@@ -67,11 +67,11 @@ Built for **mastery**—not memorization:
 
 ---
 
-## 🔷 Why FlashLearn™ EMT Stands Out
+## 🔷 Why ChapterFlashEMT Stands Out
 
 Most EMT flashcard apps are static, shallow, and generic.
 
-**FlashLearn™ is built with:**
+**ChapterFlashEMT is built with:**
 - High-clarity content
 - EMS-appropriate scenarios
 - Adaptive scheduling
@@ -84,19 +84,19 @@ Most EMT flashcard apps are static, shallow, and generic.
 
 ## 🧩 Planned Expansions
 
-FlashLearn™ EMT is the first tier of a full pathway:
+ChapterFlashEMT is the first tier of a full pathway:
 
-### 🔵 FlashLearn™ AEMT
+### 🔵 ChapterFlashAEMT
 Advanced skills, IV/IO, expanded pharmacology & scenarios.
 
-### 🔥 FlashLearn™ Paramedic
+### 🔥 ChapterFlashParamedic
 ALS content: ECGs, medication math, advanced pathophysiology, critical-care scenarios.
 
-### 📦 FlashLearn™ Bundles
+### 📦 ChapterFlashEMT Bundles
 - **EMT → AEMT**
 - **EMT → Paramedic**
 - **Full EMS Pathway**
-- **"All FlashLearn™ Apps" Access Pass**
+- **"All ChapterFlashEMT Apps" Access Pass**
 
 ---
 
@@ -109,7 +109,7 @@ Perfect for owning the complete EMT deck.
 Ideal for exam prep cycles & analytics.
 
 ### Bundle (Suggested): **$24.99**
-FlashLearn™ EMT + ProMedixEMS™ EMT-B App
+ChapterFlashEMT + ProMedixEMS™ EMT-B App
 
 ---
 
@@ -137,10 +137,10 @@ FlashLearn™ EMT + ProMedixEMS™ EMT-B App
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/FlashLearn.git
+git clone https://github.com/primalrockstar/ChapterFlashEMT.git
 
 # Navigate to the project directory
-cd FlashLearn
+cd ChapterFlashEMT
 
 # Install dependencies
 npm install
@@ -154,7 +154,7 @@ npm run db:seed
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view FlashLearn™ EMT in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view ChapterFlashEMT in your browser.
 
 ---
 
@@ -194,7 +194,7 @@ The application comes pre-loaded with:
 
 ⚠️ **IMPORTANT MEDICAL DISCLAIMER**
 
-FlashLearn™ EMT is an educational tool designed to supplement formal EMS training. It is **NOT a substitute for**:
+ChapterFlashEMT is an educational tool designed to supplement formal EMS training. It is **NOT a substitute for**:
 - Accredited EMT education programs
 - Clinical training and hands-on experience
 - Official certification courses
@@ -206,7 +206,7 @@ Always follow your local protocols, medical direction, and scope of practice. Wh
 
 ## 📝 Contributing
 
-We welcome contributions to improve FlashLearn™ EMT! Please read our contributing guidelines and submit pull requests for:
+We welcome contributions to improve ChapterFlashEMT! Please read our contributing guidelines and submit pull requests for:
 - Content improvements
 - Bug fixes
 - Feature enhancements
@@ -216,16 +216,16 @@ We welcome contributions to improve FlashLearn™ EMT! Please read our contribut
 
 ## 📞 Support
 
-For technical support or questions about FlashLearn™ EMT:
+For technical support or questions about ChapterFlashEMT:
 - Email: support@promedixems.com
-- GitHub Issues: [Report a bug](https://github.com/your-username/FlashLearn/issues)
-- Documentation: [FlashLearn™ Docs](https://docs.promedixems.com)
+- GitHub Issues: [Report a bug](https://github.com/primalrockstar/ChapterFlashEMT/issues)
+- Documentation: [ChapterFlashEMT Docs](https://docs.promedixems.com)
 
 ---
 
 ## 📄 License
 
-FlashLearn™ EMT is proprietary software owned by ProMedixEMS™. All rights reserved.
+ChapterFlashEMT is proprietary software owned by ProMedixEMS™. All rights reserved.
 
 The educational content is based on publicly available EMT-B curriculum standards and fair-use educational materials. Not affiliated with NREMT, AAOS, or any specific textbook publisher.
 
@@ -238,7 +238,7 @@ The educational content is based on publicly available EMT-B curriculum standard
 *Part of the ProMedixEMS™ Learning Ecosystem*
 
 [![ProMedixEMS](https://img.shields.io/badge/ProMedixEMS-Learning%20Platform-blue?style=for-the-badge)](https://promedixems.com)
-[![EMT](https://img.shields.io/badge/EMT-Certified%20Content-green?style=for-the-badge)](https://flashlearn.promedixems.com)
+[![EMT](https://img.shields.io/badge/EMT-Certified%20Content-green?style=for-the-badge)](https://chapterflashemt.promedixems.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://typescriptlang.org)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 

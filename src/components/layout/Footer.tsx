@@ -16,7 +16,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  FlashLearn
+                  ChapterFlashEMT
                 </h3>
                 <p className="text-xs text-muted-foreground">EMS Education Excellence</p>
               </div>
@@ -64,7 +64,7 @@ export default function Footer() {
               Community
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/about" className="hover:text-primary transition-colors">About FlashLearn</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">About ChapterFlashEMT</Link></li>
               <li><Link href="/instructors" className="hover:text-primary transition-colors">For Instructors</Link></li>
               <li><Link href="/feedback" className="hover:text-primary transition-colors">Send Feedback</Link></li>
               <li><Link href="/accessibility" className="hover:text-primary transition-colors">Accessibility</Link></li>
@@ -83,7 +83,7 @@ export default function Footer() {
               <div className="space-y-2">
                 <h4 className="font-semibold text-amber-200">Important Educational Notice</h4>
                 <p className="text-sm text-amber-200/90 leading-relaxed">
-                  <strong>FlashLearn™ is an independent EMS education tool</strong> and is not 
+                  <strong>ChapterFlashEMT™ is an independent EMS education tool</strong> and is not 
                   affiliated with NREMT, AAOS, or any certifying body. This application is 
                   designed for <strong>educational purposes only</strong> to supplement formal 
                   EMT training programs. Always follow your medical director's protocols, 
@@ -101,7 +101,7 @@ export default function Footer() {
         {/* Copyright & Affiliation */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <div className="text-center md:text-left">
-            <p>© 2025 FlashLearn. All rights reserved.</p>
+            <p>© 2025 ChapterFlashEMT. All rights reserved.</p>
             <p className="text-xs mt-1">
               Part of the <span className="text-primary font-semibold">ProMedixEMS™</span> family of educational tools.
             </p>
@@ -126,7 +126,7 @@ export default function Footer() {
         {/* Professional Standards Notice */}
         <div className="mt-6 pt-6 border-t border-white/10">
           <p className="text-xs text-center text-muted-foreground/80 leading-relaxed max-w-4xl mx-auto">
-            <strong>Professional Standards:</strong> FlashLearn adheres to the highest standards 
+            <strong>Professional Standards:</strong> ChapterFlashEMT adheres to the highest standards 
             of educational content accuracy and safety. However, medical knowledge evolves continuously. 
             Users must verify all information against current protocols, official training materials, 
             and guidance from qualified medical professionals. This application supports but never 

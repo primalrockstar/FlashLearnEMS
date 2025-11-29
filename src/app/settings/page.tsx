@@ -21,7 +21,7 @@ export default function SettingsPage() {
             Settings & Preferences
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Customize your FlashLearnEMS experience with personalized settings and preferences.
+            Customize your ChapterFlashEMT experience with personalized settings and preferences.
           </p>
         </div>
 

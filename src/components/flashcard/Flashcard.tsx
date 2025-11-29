@@ -123,7 +123,7 @@ export function Flashcard({
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center max-w-md">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs uppercase tracking-wider text-muted-foreground mb-4">
-                  <span className="text-primary">FlashLearn</span>
+                  <span className="text-primary">ChapterFlashEMT</span>
                   EMT-B
                 </div>
                 <h3 className="text-lg font-medium text-gray-200 mb-4">Question</h3>

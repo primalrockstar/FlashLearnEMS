@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - FlashLearn™ EMT',
-  description: 'Privacy Policy for FlashLearn™ EMT - ProMedixEMS™ educational application'
+  title: 'Privacy Policy - ChapterFlashEMT',
+  description: 'Privacy Policy for ChapterFlashEMT - ProMedixEMS™ educational application'
 }
 
 export default function PrivacyPolicy() {
@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-blue-300 mb-4">1. Information We Collect</h2>
               <p className="mb-4">
-                FlashLearn™ EMT is designed with privacy in mind. We collect minimal information necessary to provide you with the best learning experience:
+                ChapterFlashEMT is designed with privacy in mind. We collect minimal information necessary to provide you with the best learning experience:
               </p>
               <ul className="list-disc ml-6 space-y-2">
                 <li><strong>Study Progress Data:</strong> Your flashcard performance, study sessions, and learning analytics (stored locally on your device)</li>
@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-blue-300 mb-4">4. Third-Party Services</h2>
               <p className="mb-4">
-                FlashLearn™ EMT may integrate with the following third-party services:
+                ChapterFlashEMT may integrate with the following third-party services:
               </p>
               <ul className="list-disc ml-6 space-y-2">
                 <li><strong>App Stores:</strong> Apple App Store and Google Play Store for app distribution</li>
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-blue-300 mb-4">5. Children's Privacy</h2>
               <p>
-                FlashLearn™ EMT is designed for EMT students and healthcare professionals. While some users may be under 18, 
+                ChapterFlashEMT is designed for EMT students and healthcare professionals. While some users may be under 18, 
                 we do not knowingly collect personal information from children under 13. If you believe a child under 13 has 
                 provided us with personal information, please contact us immediately.
               </p>
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-2xl font-semibold text-blue-300 mb-4">8. International Users</h2>
               <p>
-                FlashLearn™ EMT complies with applicable privacy laws including GDPR, CCPA, and other regional privacy regulations. 
+                ChapterFlashEMT complies with applicable privacy laws including GDPR, CCPA, and other regional privacy regulations. 
                 Your data may be processed in the United States where our servers are located.
               </p>
             </section>
@@ -139,7 +139,7 @@ export default function PrivacyPolicy() {
               <h3 className="text-lg font-semibold text-blue-300 mb-2">🛡️ ProMedixEMS™ Privacy Commitment</h3>
               <p className="text-sm">
                 As healthcare professionals ourselves, we understand the importance of privacy and confidentiality. 
-                FlashLearn™ EMT is built with privacy-by-design principles to protect your educational journey while 
+                ChapterFlashEMT is built with privacy-by-design principles to protect your educational journey while 
                 providing the best possible learning experience.
               </p>
             </div>

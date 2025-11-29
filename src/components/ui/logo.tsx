@@ -27,7 +27,7 @@ export function Logo({ size = 'md', showSubtext = true, className }: LogoProps) 
         "font-black bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight",
         sizeClasses[size]
       )}>
-        FlashLearn<span className="text-emerald-400">EMS</span>
+        ChapterFlash<span className="text-emerald-400">EMT</span>
       </h1>
       {showSubtext && (
         <div className={cn(

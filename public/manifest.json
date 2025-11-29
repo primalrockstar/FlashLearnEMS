@@ -1,6 +1,6 @@
 {
-  "name": "FlashLearn™ EMT - ProMedixEMS™",
-  "short_name": "FlashLearn EMT",
+  "name": "ChapterFlashEMT - ProMedixEMS™",
+  "short_name": "ChapterFlashEMT",
   "description": "Next-generation EMT flashcards built for modern EMS students. Master all 45 EMT chapters with adaptive learning.",
   "start_url": "/",
   "display": "standalone",

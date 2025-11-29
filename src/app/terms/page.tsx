@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - FlashLearn™ EMT',
-  description: 'Terms of Service for FlashLearn™ EMT - ProMedixEMS™ educational application'
+  title: 'Terms of Service - ChapterFlashEMT',
+  description: 'Terms of Service for ChapterFlashEMT - ProMedixEMS™ educational application'
 }
 
 export default function TermsOfService() {
@@ -16,7 +16,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-blue-300 mb-4">1. Acceptance of Terms</h2>
               <p>
-                By downloading, installing, or using FlashLearn™ EMT (the "App"), you agree to be bound by these Terms of Service. 
+                By downloading, installing, or using ChapterFlashEMT (the "App"), you agree to be bound by these Terms of Service. 
                 If you do not agree to these terms, do not use the App. These terms constitute a legally binding agreement between 
                 you and ProMedixEMS™.
               </p>
@@ -25,7 +25,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-2xl font-semibold text-blue-300 mb-4">2. Description of Service</h2>
               <p className="mb-4">
-                FlashLearn™ EMT is an educational mobile application designed to help Emergency Medical Technician (EMT) students 
+                ChapterFlashEMT is an educational mobile application designed to help Emergency Medical Technician (EMT) students 
                 and professionals study and prepare for certification examinations. The App provides:
               </p>
               <ul className="list-disc ml-6 space-y-2">
@@ -41,7 +41,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold text-red-300 mb-4">⚠️ 3. Medical Disclaimer</h2>
               <div className="space-y-4">
                 <p className="font-semibold">
-                  IMPORTANT: FlashLearn™ EMT is an educational tool and is NOT a substitute for proper medical training, 
+                  IMPORTANT: ChapterFlashEMT is an educational tool and is NOT a substitute for proper medical training, 
                   certification programs, or clinical experience.
                 </p>
                 <ul className="list-disc ml-6 space-y-2">
@@ -201,7 +201,7 @@ export default function TermsOfService() {
             <div className="mt-8 p-4 bg-blue-900/30 border border-blue-700/50 rounded-lg">
               <h3 className="text-lg font-semibold text-blue-300 mb-2">🚑 ProMedixEMS™ Commitment</h3>
               <p className="text-sm">
-                FlashLearn™ EMT is built by EMS professionals for EMS professionals. Our commitment is to provide 
+                ChapterFlashEMT is built by EMS professionals for EMS professionals. Our commitment is to provide 
                 high-quality educational tools while maintaining the highest standards of safety, privacy, and professional excellence.
               </p>
             </div>
