@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "FlashLearn™ EMT - ProMedixEMS™",
+  title: "ChapterFlashEMT - ProMedixEMS™",
   description: "Next-generation EMT flashcards built for modern EMS students. Master all 45 EMT chapters with adaptive learning and spaced repetition.",
   keywords: [
     "EMT",
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Shaun Williamson", url: "https://promedixems.com" }],
   creator: "ProMedixEMS™",
   publisher: "ProMedixEMS™",
-  applicationName: "FlashLearn™ EMT",
+  applicationName: "ChapterFlashEMT",
   category: "Education",
   classification: "Medical Education",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "FlashLearn™ EMT",
+    title: "ChapterFlashEMT",
     startupImage: [
       {
         url: "/apple-touch-startup-image-768x1004.png",
@@ -113,15 +113,15 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "FlashLearn™ EMT - ProMedixEMS™",
-    title: "FlashLearn™ EMT - Master EMT Certification",
+    siteName: "ChapterFlashEMT - ProMedixEMS™",
+    title: "ChapterFlashEMT - Master EMT Certification",
     description: "Next-generation EMT flashcards with adaptive learning. 700+ cards across 45 chapters. Built for modern EMS students.",
     images: [
       {
         url: "/og-image-1200x630.png",
         width: 1200,
         height: 630,
-        alt: "FlashLearn™ EMT - Professional EMT Study Application"
+        alt: "ChapterFlashEMT - Professional EMT Study Application"
       }
     ]
   },
@@ -129,7 +129,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@ProMedixEMS",
     creator: "@ShaunWilliamson",
-    title: "FlashLearn™ EMT - Master EMT Certification",
+    title: "ChapterFlashEMT - Master EMT Certification",
     description: "Next-generation EMT flashcards with adaptive learning. 700+ cards across 45 chapters.",
     images: ["/twitter-image-1200x600.png"]
   },
@@ -181,7 +181,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MobileApplication",
-              "name": "FlashLearn™ EMT",
+              "name": "ChapterFlashEMT",
               "applicationCategory": "EducationalApplication",
               "operatingSystem": "iOS, Android, Web",
               "description": "Next-generation EMT flashcards built for modern EMS students. Master all 45 EMT chapters with adaptive learning.",

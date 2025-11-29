@@ -43,7 +43,7 @@ export function AppStoreAnnouncement() {
               </div>
               
               <p className="text-white/90 text-sm sm:text-base leading-relaxed">
-                <strong>FlashLearnEMS</strong> will be available on the{' '}
+                <strong>ChapterFlashEMT</strong> will be available on the{' '}
                 <span className="font-semibold">App Store</span> and{' '}
                 <span className="font-semibold">Google Play</span> in early 2026.{' '}
                 <span className="hidden sm:inline">

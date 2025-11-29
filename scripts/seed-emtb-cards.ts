@@ -238,7 +238,7 @@ async function main() {
     console.log(`📚 Chapters: ${result.chapters}`)
     console.log(`⏭️  Skipped: ${result.skipped}`)
     
-    console.log('\n🔥 FlashLearn is now loaded with 705 EMT-B flashcards!')
+    console.log('\n🔥 ChapterFlashEMT is now loaded with 705 EMT-B flashcards!')
     
   } catch (error) {
     console.error('❌ Seeding failed:', error)

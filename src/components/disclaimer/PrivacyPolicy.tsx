@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
             <h3 className="text-lg font-semibold">Our Commitment to Privacy</h3>
             <div className="rounded-xl bg-primary/10 border border-primary/30 p-6">
               <p className="text-sm leading-relaxed">
-                <strong>FlashLearn</strong> respects your privacy and is committed to protecting 
+                <strong>ChapterFlashEMT</strong> respects your privacy and is committed to protecting 
                 your personal information. This policy explains how we collect, use, and safeguard 
                 data related to your educational progress and app usage. We prioritize 
                 <strong> local data storage</strong> and <strong>minimal data collection</strong> 
@@ -93,7 +93,7 @@ export default function PrivacyPolicy() {
             </div>
             <div className="rounded-xl bg-red-400/10 border border-red-400/30 p-6">
               <p className="text-sm leading-relaxed mb-4">
-                <strong>We prioritize your privacy.</strong> FlashLearn does NOT collect, 
+                <strong>We prioritize your privacy.</strong> ChapterFlashEMT does NOT collect, 
                 store, or transmit the following information:
               </p>
               <div className="grid gap-4 md:grid-cols-2">
@@ -188,7 +188,7 @@ export default function PrivacyPolicy() {
             <div className="rounded-xl bg-yellow-400/10 border border-yellow-400/30 p-6">
               <div className="space-y-4 text-sm leading-relaxed">
                 <p>
-                  <strong>Minimal Third-Party Integration:</strong> FlashLearn minimizes 
+                  <strong>Minimal Third-Party Integration:</strong> ChapterFlashEMT minimizes 
                   third-party service usage to protect your privacy. Any external services 
                   used (such as crash reporting or anonymous analytics) are configured 
                   with the strongest privacy settings available.
@@ -222,7 +222,7 @@ export default function PrivacyPolicy() {
               </ul>
               <div className="bg-cyan-400/10 rounded-lg p-3 mt-4">
                 <p className="text-xs text-cyan-200">
-                  <strong>Educational Focus:</strong> Since FlashLearn prioritizes local 
+                  <strong>Educational Focus:</strong> Since ChapterFlashEMT prioritizes local 
                   storage and educational use, most privacy controls are built directly 
                   into the app settings and data management features.
                 </p>
@@ -251,7 +251,7 @@ export default function PrivacyPolicy() {
           {/* Footer */}
           <div className="text-center text-xs text-muted-foreground border-t border-white/10 pt-6">
             <p>
-              © 2025 FlashLearn. All rights reserved. Privacy-focused EMS education.
+              © 2025 ChapterFlashEMT. All rights reserved. Privacy-focused EMS education.
               <br />
               Part of the ProMedixEMS™ family of educational tools.
             </p>

@@ -26,7 +26,7 @@ export default function TermsOfService() {
             </div>
             <div className="rounded-xl bg-amber-400/10 border border-amber-400/30 p-6">
               <p className="text-sm leading-relaxed mb-4">
-                <strong>FlashLearn is designed exclusively for educational purposes</strong> to supplement 
+                <strong>ChapterFlashEMT is designed exclusively for educational purposes</strong> to supplement 
                 formal Emergency Medical Technician (EMT) training programs. This application is intended to:
               </p>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -46,7 +46,7 @@ export default function TermsOfService() {
             </div>
             <div className="rounded-xl bg-white/5 border border-white/10 p-6">
               <p className="text-sm leading-relaxed mb-4 font-semibold text-blue-200">
-                FlashLearn is an independent EMS education tool and is not affiliated with, endorsed by, 
+                ChapterFlashEMT is an independent EMS education tool and is not affiliated with, endorsed by, 
                 or officially connected to any certifying body, educational publisher, or medical organization.
               </p>
               <div className="grid gap-3 md:grid-cols-2">
@@ -81,7 +81,7 @@ export default function TermsOfService() {
             <div className="rounded-xl bg-red-400/10 border border-red-400/30 p-6">
               <div className="space-y-4 text-sm leading-relaxed">
                 <p>
-                  <strong>IMPORTANT:</strong> FlashLearn and its developers provide this educational 
+                  <strong>IMPORTANT:</strong> ChapterFlashEMT and its developers provide this educational 
                   content "AS IS" without any warranties, express or implied. We are not liable for:
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground pl-4">
@@ -146,7 +146,7 @@ export default function TermsOfService() {
               <h3 className="text-lg font-semibold">User Responsibilities</h3>
             </div>
             <div className="rounded-xl bg-white/5 border border-white/10 p-6">
-              <p className="text-sm leading-relaxed mb-4">By using FlashLearn, you agree to:</p>
+              <p className="text-sm leading-relaxed mb-4">By using ChapterFlashEMT, you agree to:</p>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• Use this application solely for legitimate educational purposes</li>
                 <li>• Verify all information against official sources and current protocols</li>
@@ -192,7 +192,7 @@ export default function TermsOfService() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               We reserve the right to modify these Terms of Service at any time to reflect 
               changes in our services, legal requirements, or educational standards. Continued 
-              use of FlashLearn after changes constitutes acceptance of the updated terms. 
+              use of ChapterFlashEMT after changes constitutes acceptance of the updated terms. 
               For questions about these terms or content accuracy, contact your training 
               program instructor or medical director.
             </p>
@@ -201,7 +201,7 @@ export default function TermsOfService() {
           {/* Footer */}
           <div className="text-center text-xs text-muted-foreground border-t border-white/10 pt-6">
             <p>
-              © 2025 FlashLearn. All rights reserved. Built with ❤️ for EMS education excellence.
+              © 2025 ChapterFlashEMT. All rights reserved. Built with ❤️ for EMS education excellence.
               <br />
               Part of the ProMedixEMS™ family of educational tools.
             </p>

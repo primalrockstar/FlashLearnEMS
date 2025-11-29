@@ -28,7 +28,7 @@ export function Footer() {
               </h3>
               <div className="text-red-200/90 space-y-2 text-sm leading-relaxed">
                 <p>
-                  <strong>FlashLearnEMS is an educational tool designed to supplement formal EMT training.</strong> 
+                  <strong>ChapterFlashEMT is an educational tool designed to supplement formal EMT training.</strong> 
                   It is NOT a substitute for accredited EMT education programs, clinical training, hands-on experience, 
                   official certification courses, or medical advice.
                 </p>
@@ -183,7 +183,7 @@ export function Footer() {
                 © 2025 <strong>WebConnect360</strong>. All rights reserved.
               </p>
               <p className="text-xs text-white/50 mt-1">
-                FlashLearnEMS™ and ProMedixEMS™ are trademarks of WebConnect360.
+                ChapterFlashEMT™ and ProMedixEMS™ are trademarks of WebConnect360.
               </p>
             </div>
 
@@ -207,7 +207,7 @@ export function Footer() {
           {/* Final Disclaimer */}
           <div className="mt-6 p-4 rounded-lg bg-amber-900/20 border border-amber-700/30">
             <p className="text-xs text-amber-200/90 text-center leading-relaxed">
-              <strong>Educational Tool Notice:</strong> FlashLearnEMS provides study materials based on publicly available EMT-B curriculum standards. 
+              <strong>Educational Tool Notice:</strong> ChapterFlashEMT provides study materials based on publicly available EMT-B curriculum standards. 
               Not affiliated with NREMT, AAOS, or any specific textbook publisher. Always verify information with authoritative sources and qualified instructors. 
               For medical emergencies, follow your training and local protocols.
             </p>

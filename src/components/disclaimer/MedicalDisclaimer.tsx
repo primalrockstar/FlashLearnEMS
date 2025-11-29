@@ -16,7 +16,7 @@ export default function MedicalDisclaimer() {
                 Medical & Educational Disclaimer
               </h3>
               <p className="text-sm text-amber-200/90 leading-relaxed">
-                <strong>FOR EDUCATIONAL PURPOSES ONLY.</strong> FlashLearn and all associated 
+                <strong>FOR EDUCATIONAL PURPOSES ONLY.</strong> ChapterFlashEMT and all associated 
                 applications are educational tools designed to supplement—not replace—formal 
                 EMS training and certification programs. The information provided should not be 
                 used as a substitute for professional medical advice, diagnosis, or treatment.
@@ -64,7 +64,7 @@ export default function MedicalDisclaimer() {
           <div className="border-t border-white/10 pt-4">
             <h4 className="font-semibold text-foreground mb-2">No Official Affiliation</h4>
             <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-              FlashLearn is an independently developed EMS study tool and is not affiliated with, 
+              ChapterFlashEMT is an independently developed EMS study tool and is not affiliated with, 
               endorsed by, or officially connected to the following organizations:
             </p>
             <ul className="text-xs text-muted-foreground space-y-1 pl-4">
@@ -91,7 +91,7 @@ export default function MedicalDisclaimer() {
             <p className="text-xs text-muted-foreground leading-relaxed">
               <strong>Content Disclaimer:</strong> All educational content is original or based on publicly 
               available EMS education standards. We use industry-standard security but no system is 100% secure. 
-              <strong>Limitation of Liability:</strong> FlashLearn provides content "as is" without warranties. 
+              <strong>Limitation of Liability:</strong> ChapterFlashEMT provides content "as is" without warranties. 
               We are not liable for exam performance, clinical decisions, misuse of information, or damages 
               arising from app use. Users are responsible for verifying information accuracy and following 
               official requirements from their medical director and certifying body.
@@ -116,7 +116,7 @@ export default function MedicalDisclaimer() {
           {/* Copyright Notice */}
           <div className="text-center text-xs text-muted-foreground border-t border-white/10 pt-4">
             <p>
-              © 2025 FlashLearn. All rights reserved. Built with ❤️ for EMS education excellence.
+              © 2025 ChapterFlashEMT. All rights reserved. Built with ❤️ for EMS education excellence.
               <br />
               Part of the ProMedixEMS™ family of educational tools.
             </p>

@@ -84,7 +84,7 @@ Most EMT flashcard apps are static, shallow, and generic.
 
 ## 🧩 Planned Expansions
 
-FlashLearn™ EMT is the first tier of a full pathway:
+ChapterFlashEMT is the first tier of a full pathway:
 
 ### 🔵 ChapterFlashAEMT
 Advanced skills, IV/IO, expanded pharmacology & scenarios.
@@ -137,10 +137,10 @@ ChapterFlashEMT + ProMedixEMS™ EMT-B App
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/FlashLearn.git
+git clone https://github.com/primalrockstar/ChapterFlashEMT.git
 
 # Navigate to the project directory
-cd FlashLearn
+cd ChapterFlashEMT
 
 # Install dependencies
 npm install
@@ -206,7 +206,7 @@ Always follow your local protocols, medical direction, and scope of practice. Wh
 
 ## 📝 Contributing
 
-We welcome contributions to improve FlashLearn™ EMT! Please read our contributing guidelines and submit pull requests for:
+We welcome contributions to improve ChapterFlashEMT! Please read our contributing guidelines and submit pull requests for:
 - Content improvements
 - Bug fixes
 - Feature enhancements
@@ -216,16 +216,16 @@ We welcome contributions to improve FlashLearn™ EMT! Please read our contribut
 
 ## 📞 Support
 
-For technical support or questions about FlashLearn™ EMT:
+For technical support or questions about ChapterFlashEMT:
 - Email: support@promedixems.com
-- GitHub Issues: [Report a bug](https://github.com/your-username/FlashLearn/issues)
-- Documentation: [FlashLearn™ Docs](https://docs.promedixems.com)
+- GitHub Issues: [Report a bug](https://github.com/primalrockstar/ChapterFlashEMT/issues)
+- Documentation: [ChapterFlashEMT Docs](https://docs.promedixems.com)
 
 ---
 
 ## 📄 License
 
-FlashLearn™ EMT is proprietary software owned by ProMedixEMS™. All rights reserved.
+ChapterFlashEMT is proprietary software owned by ProMedixEMS™. All rights reserved.
 
 The educational content is based on publicly available EMT-B curriculum standards and fair-use educational materials. Not affiliated with NREMT, AAOS, or any specific textbook publisher.
 
@@ -238,7 +238,7 @@ The educational content is based on publicly available EMT-B curriculum standard
 *Part of the ProMedixEMS™ Learning Ecosystem*
 
 [![ProMedixEMS](https://img.shields.io/badge/ProMedixEMS-Learning%20Platform-blue?style=for-the-badge)](https://promedixems.com)
-[![EMT](https://img.shields.io/badge/EMT-Certified%20Content-green?style=for-the-badge)](https://flashlearn.promedixems.com)
+[![EMT](https://img.shields.io/badge/EMT-Certified%20Content-green?style=for-the-badge)](https://chapterflashemt.promedixems.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://typescriptlang.org)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 

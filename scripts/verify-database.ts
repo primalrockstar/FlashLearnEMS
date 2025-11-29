@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 async function verifyDatabase() {
   try {
-    console.log('🔍 Verifying FlashLearn Database...\n')
+    console.log('🔍 Verifying ChapterFlashEMT Database...\n')
     
     // Count everything
     const flashcardCount = await prisma.flashcard.count()

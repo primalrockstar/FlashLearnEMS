@@ -39,7 +39,7 @@ export function MedicalDisclaimerBanner({
                 </h3>
                 <div className="text-red-200/90 text-sm leading-relaxed space-y-2">
                   <p>
-                    <strong>FlashLearnEMS is an educational tool designed to supplement formal EMT training.</strong> 
+                    <strong>ChapterFlashEMT is an educational tool designed to supplement formal EMT training.</strong> 
                     It is NOT a substitute for accredited EMT education programs, clinical training, hands-on experience, 
                     official certification courses, or medical advice.
                   </p>
